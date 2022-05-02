@@ -20,7 +20,7 @@ for players, ids in zip(initial_positions['coordinates'], initial_positions['id'
     logging.info(f'The tracker for the {ids} player was created correctly')
 
 
-def drawBox(img, position, player_id):
+def drawBox(img, position, player_id):  # Function to draw the Bounding Box for each player
     x,y,w,h = int(position[0]), int(position[1]), int(position[2]), int(position[3])
     cv2.rectangle(img, (x,y), ((x+w), (y+h)), (255,0,0))
     cv2.putText(img,
