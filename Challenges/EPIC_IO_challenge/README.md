@@ -4,7 +4,7 @@ frame dado sabiendo la posición de dicho objeto en el frame anterior.
 
 Para resolver este challenge, fundamentalmente se utilizó la librería de **Open CV y su módulo de
 Multitracking de imágenes** para así poder ir rastreando la posición de varios objetos a la vez; como 
-algoritmo o estrategia de rastreo se optó por utilizar el **algoritmo de MOSSE** 
+algoritmo o estrategia de rastreo se optó por utilizar el **algoritmo MOSSE** 
 
 Cuando ejecutamos el programa, se captura el primer cuadro de video, con las posiciones iniciales dadas en el archivo
 .JSON, que fue leído con la librería pandas para recorrer más fácil su contenido, se le asigna un rastreador a cada una
