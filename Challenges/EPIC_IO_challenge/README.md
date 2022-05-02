@@ -15,6 +15,7 @@ las coordenadas de cada imagen que fue asignada, así también se le asigna un B
 y rendimiento del algoritmo de tracking seleccionado
 
 **¿Por qué se optó por el algoritmo MOSSE para el seguimiento?**
+
 Además de que se implementó el código con todos los otros 7 algoritmos que provee Open CV para hacer seguimiento de imágenes
 y este fue el de mejor desempeño, el algoritmo MOOSE (Minimum Output Sum of Squared Error), usa una correlación adaptativa
 con fines de seguimiento que genera filtros de correlación estables. Por lo que lo hace robusto frente a escalas, poses y deformaciones
