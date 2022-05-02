@@ -22,3 +22,4 @@ con fines de seguimiento que genera filtros de correlación estables. Por lo que
 y un algoritmo ideal para este tipo de videos que las imágenes a seguir son bastante dinámicas
 
 
+Video donde se puede visualizar como es el funcionamiento del modelo de forma local: https://drive.google.com/file/d/14jBFX4yGPHpP2NnxZOaxFC-pkr-uSdZZ/view?usp=sharing
