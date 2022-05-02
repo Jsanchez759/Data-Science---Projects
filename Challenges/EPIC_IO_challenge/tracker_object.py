@@ -13,18 +13,18 @@ logging.info("The input features (video and initial positions) imported properly
 success, frame = video.read()  # Read de input video
 multi_tracker = cv2.legacy.MultiTracker_create()
 boxes = []
-for players, id in zip(initial_positions['coordinates'], initial_positions['id']):
+for players, ids in zip(initial_positions['coordinates'], initial_positions['id']):
     bbox = tuple(players)
     boxes.append(bbox)
     multi_tracker.add(cv2.legacy.TrackerMOSSE_create(), frame, bbox)  # Initialize tracker with first frame for each id
-    logging.info(f'The tracker for the {id} player was created correctly')
+    logging.info(f'The tracker for the {ids} player was created correctly')
 
 
-def drawBox(img, bbox, id):
-    x,y,w,h = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
+def drawBox(img, position, player_id):
+    x,y,w,h = int(position[0]), int(position[1]), int(position[2]), int(position[3])
     cv2.rectangle(img, (x,y), ((x+w), (y+h)), (255,0,0))
     cv2.putText(img,
-                'Tracking the Id '+ str(id)+' player',
+                'Tracking the Id '+ str(player_id)+' player',
                 (x, y),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.7,
@@ -44,15 +44,15 @@ while True:
 
     fps = cv2.getTickFrequency() / (cv2.getTickCount() - timer)  # Frames per second
 
-    for i, j in zip(bbox, initial_positions['id']):
+    for bbox, ids in zip(bbox, initial_positions['id']):
         if ok:  # Tracking success
-            logging.info(f'The tracker for {j} in the new frame is ok and the new position is x={int(i[0])} and '
-                         f'y={int(i[1])}')
-            drawBox(frame, i, j)  # Draw the Bounding Box
+            logging.info(f'The tracker for {ids} in the new frame is ok and the new position is x={int(bbox[0])} and '
+                         f'y={int(bbox[1])}')
+            drawBox(frame, bbox, ids)  # Draw the Bounding Box
         else:
             cv2.putText(frame,
                         "Tracking failure detected",
-                        (int(i[0]), int(i[1])),
+                        (int(bbox[0]), int(bbox[1])),
                         cv2.FONT_HERSHEY_SIMPLEX,
                         0.7,
                         (0, 0, 255),
