@@ -24,4 +24,5 @@ y un algoritmo ideal para este tipo de videos que las imágenes a seguir son bas
 Video donde se puede visualizar como es el funcionamiento del modelo de forma local: https://drive.google.com/file/d/14jBFX4yGPHpP2NnxZOaxFC-pkr-uSdZZ/view?usp=sharing
 
 ### Diagrama básico del algoritmo 
+
 ![Diagrama básico](EPIC-iO Challenge.png)
