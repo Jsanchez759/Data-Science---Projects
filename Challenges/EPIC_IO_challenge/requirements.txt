@@ -1,0 +1,5 @@
+pandas
+opencv-python-headless
+opencv-contrib-python
+PyQt5
+
